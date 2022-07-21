@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './Components/Navbar';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import ImagePoster from './assets/111.jpeg';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth='xl' sx={{ display: 'flex' }} disableGutters>
+      <Navbar />
+      <Box sx={{ width: '100%', marginTop: 10 }}>
+        <Box
+          component='img'
+          sx={{
+            height: 408,
+            width: 320,
+            maxWidth: 345,
+            objectFit: 'cover',
+          }}
+          alt='Logo'
+          src={ImagePoster}
+        />
+        {/* <MovieCard /> */}
+        <Box
+          sx={{
+            display: 'flex',
+            height: 228,
+            width: '100%',
+            backgroundColor: '#141414',
+            position: 'absolute',
+          }}
+        ></Box>
+      </Box>
+    </Container>
   );
 }
 
